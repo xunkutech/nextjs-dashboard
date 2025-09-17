@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum InvoiceStatus {
+  pending
+  paid
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+}
+
+model Customer {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  imageUrl  String    @map("image_url")
+  invoices  Invoice[]
+
+  @@map("customers")
+}
+
+model Invoice {
+  id         String         @id @default(uuid())
+  amount     Int
+  status     InvoiceStatus
+  date       String
+  customer   Customer       @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  customerId String         @map("customer_id")
+
+  @@map("invoices")
+}
+
+model Revenue {
+  id      Int    @id @default(autoincrement())
+  month   String
+  revenue Int
+
+  @@map("revenue")
+}
