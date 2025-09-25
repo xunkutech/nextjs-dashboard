@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  /* Preserve custom blue palette used across the app */
+  --color-blue-400: #2589FE;
+  --color-blue-500: #0070F3;
+  --color-blue-600: #2F6FEB;
+
+  /* Enable grid-cols-13 utility */
+  --grid-template-columns-13: repeat(13, minmax(0, 1fr));
+}
+
+/* Animation keyframes for skeleton shimmer */
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
 
 input[type='number'] {
   -moz-appearance: textfield;
