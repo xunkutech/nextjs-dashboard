@@ -8,7 +8,7 @@ import { RevenueChartSkeleton, LatestInvoicesSkeleton, CardsSkeleton } from '@/a
 
 export default async function Page() {
   // const revenue = await fetchRevenue();
-  // const cardData = await fetchCardData();
+  const cardData = await fetchCardData();
   const { totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers } = cardData;
   return (
     <main>

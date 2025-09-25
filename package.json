@@ -5,7 +5,8 @@
     "dev": "next dev --turbopack",
     "start": "next start",
     "lint": "next lint",
-    "test": "next test"
+    "test": "next test",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -22,7 +23,10 @@
     "tailwindcss": "3.4.17",
     "typescript": "5.7.3",
     "use-debounce": "^10.0.4",
-    "zod": "^3.25.17"
+    "zod": "^3.25.17",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-shell": "^2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
@@ -30,7 +34,8 @@
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
     "eslint": "^9.35.0",
-    "eslint-config-next": "15.5.2"
+    "eslint-config-next": "15.5.2",
+    "@tauri-apps/cli": "^2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
